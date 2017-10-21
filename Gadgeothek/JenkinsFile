@@ -39,6 +39,10 @@ pipeline
         {
             archiveArtifacts '**/outputs/*/*.apk'
         }
+        success
+        {
+            emailext attachLog: false, body: '', compressLog: true, subject: 'Build Succeeded', to: 'reto@stahel.com'
+        }
         failure
         {
             emailext attachLog: true, body: '', compressLog: true, subject: 'Build Failed', to: 'reto@stahel.com'
