@@ -33,4 +33,11 @@ pipeline
             }
         }
     }
+    post
+    {
+        always
+        {
+            archiveArtifacts '**/outputs/*/*.apk'
+        }
+    }
 }
