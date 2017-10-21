@@ -13,8 +13,8 @@ pipeline
         {
             steps
             {
-                gradlew build
-                gradlew lint
+                sh 'Gadgeothek/gradlew build'
+                sh 'Gadgeothek/gradlew lint'
             }
         }
         stage('End to End Test')
