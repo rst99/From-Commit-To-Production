@@ -13,8 +13,9 @@ pipeline
         {
             steps
             {
-                sh 'Gadgeothek/gradlew build'
-                sh 'Gadgeothek/gradlew lint'
+
+                sh 'cd Gadgeothek;./gradlew build'
+                sh 'cd Gadgeothek;./gradlew lint'
             }
         }
         stage('End to End Test')
