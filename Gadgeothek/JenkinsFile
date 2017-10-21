@@ -16,11 +16,11 @@ pipeline
                 sh 'echo Build'
             }
         }
-        stage('End2End Test')
+        stage('End to End Test')
         {
             steps
             {
-                sh 'echo End2End Test'
+                sh 'echo End to End Test'
             }
         }
         stage('Deployment')
