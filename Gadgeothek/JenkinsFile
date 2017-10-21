@@ -39,5 +39,9 @@ pipeline
         {
             archiveArtifacts '**/outputs/*/*.apk'
         }
+        failure
+        {
+            emailext attachLog: true, body: '', compressLog: true, subject: 'Build Failed', to: 'reto@stahel.com'
+        }
     }
 }
