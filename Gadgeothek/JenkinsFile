@@ -22,7 +22,7 @@ pipeline
         {
             steps
             {
-                sh 'echo End to End Test'
+                sh '(cd Gadgeothek; ./gradlew connectedAndroidTest)'
             }
         }
         stage('Deployment')
