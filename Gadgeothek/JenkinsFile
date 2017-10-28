@@ -18,6 +18,13 @@ pipeline
                 sh 'cd Gadgeothek;./gradlew lint'
             }
         }
+        stage('UnitTest')
+        {
+            steps
+            {
+                sh '(cd Gadgeothek; ./gradlew test)'
+             }
+        }
         stage('End to End Test')
         {
             steps
