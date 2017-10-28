@@ -45,10 +45,6 @@ pipeline
     }
     post
     {
-        always
-        {
-            archiveArtifacts '**/outputs/*/*.apk'
-       }
         success
         {
             emailext attachLog: false, body: '', compressLog: true, subject: 'Build Succeeded', to: 'reto@stahel.com'
@@ -57,5 +53,10 @@ pipeline
         {
             emailext attachLog: true, body: '', compressLog: true, subject: 'Build Failed', to: 'reto@stahel.com'
         }
+        always
+        {
+            archiveArtifacts '**/outputs/*/*.apk'
+            cleanWs()
+       }
     }
 }
