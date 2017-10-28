@@ -1,5 +1,6 @@
 package ch.hsr.mge.gadgeothek.service;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.reflect.TypeToken;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ch.hsr.mge.gadgeothek.R;
 import ch.hsr.mge.gadgeothek.domain.Gadget;
 import ch.hsr.mge.gadgeothek.domain.Loan;
 import ch.hsr.mge.gadgeothek.domain.Reservation;

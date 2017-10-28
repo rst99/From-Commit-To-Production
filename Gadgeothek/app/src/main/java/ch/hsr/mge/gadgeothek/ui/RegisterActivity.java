@@ -1,5 +1,6 @@
 package ch.hsr.mge.gadgeothek.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -102,6 +103,13 @@ public class RegisterActivity extends AbstractAuthenticationActivity {
             showProgress(loginFormView, progressView, true);
             hideSoftKeyboard(loginFormView);
 
+            SharedPreferences preferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
+
+            String url = preferences.getString(
+                    getString(R.string.settings_server_address),
+                    getString(R.string.settings_default_server));
+
+            LibraryService.setServerAddress(url);
             LibraryService.register(email, password, name, matrikelNr, new Callback<Boolean>() {
                 @Override
                 public void onCompletion(Boolean success) {

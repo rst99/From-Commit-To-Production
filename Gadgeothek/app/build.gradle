@@ -5,8 +5,6 @@ android {
         config {
         }
     }
-    // Specifies two flavor dimensions.
-    flavorDimensions "demo", "full"
 
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
@@ -30,13 +28,11 @@ android {
             {
                 demo
                         {
-                            dimension "demo"
                             applicationIdSuffix ".demo"
                             versionNameSuffix "-demo"
                         }
                 full
                         {
-                            dimension "full"
                             applicationIdSuffix ".full"
                             versionNameSuffix "-full"
                         }
