@@ -5,8 +5,11 @@ android {
         config {
         }
     }
+    // Specifies two flavor dimensions.
+    flavorDimensions "demo", "full"
+
     compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "ch.hsr.mge.gadgeothek"
         minSdkVersion 21
@@ -27,11 +30,13 @@ android {
             {
                 demo
                         {
+                            dimension "demo"
                             applicationIdSuffix ".demo"
                             versionNameSuffix "-demo"
                         }
                 full
                         {
+                            dimension "full"
                             applicationIdSuffix ".full"
                             versionNameSuffix "-full"
                         }
