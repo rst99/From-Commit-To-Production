@@ -23,7 +23,6 @@ pipeline
         {
             steps
             {
-                junit allowEmptyResults: true, testResults: '**/build/test-results/testDemoDebugUnitTest/*'
                 sh '(cd Gadgeothek; ./gradlew test)'
              }
         }
@@ -47,7 +46,8 @@ pipeline
         always
         {
             archiveArtifacts '**/outputs/*/*.apk'
-        }
+            junit allowEmptyResults: true, testResults: '**/build/test-results/*/*.xml'
+       }
         success
         {
             emailext attachLog: false, body: '', compressLog: true, subject: 'Build Succeeded', to: 'reto@stahel.com'
