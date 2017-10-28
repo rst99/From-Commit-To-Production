@@ -18,10 +18,12 @@ pipeline
                 sh 'cd Gadgeothek;./gradlew lint'
             }
         }
+
         stage('UnitTest')
         {
             steps
             {
+                junit allowEmptyResults: true, testResults: '**/build/test-results/testDemoDebugUnitTest/*'
                 sh '(cd Gadgeothek; ./gradlew test)'
              }
         }
